@@ -1,4 +1,4 @@
-window.addEventListener('keydown', function(e){
+function play_sound (e) {
     // use a css attribute selector, switch single quote to Backtick to use ES6 template string
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key   = document.querySelector(`.key[data-key="${e.keyCode}"]`);
@@ -8,7 +8,7 @@ window.addEventListener('keydown', function(e){
     audio.currentTime = 0; // rewind to the start
     audio.play();
     key.classList.add('playing');
-});
+}
 
 function remove_transition(e){ 
     // console.log(e);
@@ -20,5 +20,6 @@ function remove_transition(e){
 } // remove_transition END
 
 const keys = document.querySelectorAll('.key');
-
 keys.forEach(key => key.addEventListener('transitionend', remove_transition));
+
+window.addEventListener('keydown', play_sound);
