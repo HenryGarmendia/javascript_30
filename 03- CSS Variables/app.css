@@ -2,6 +2,12 @@
     misc styles, nothing to do with CSS variables
 */
 
+:root {
+    --base: #d16c0d;
+    --spacing: 5px;
+    --blur: 5px;
+}
+
 body {
     text-align: center;
     background: #193549;
@@ -15,9 +21,16 @@ body {
         margin-bottom: 50px;
     }
 
+    .hl { 
+        color: var(--base);
+    }
+
     img {
+        background: var(--base);
+        filter: blur(var(--blur));
         height: auto;
-        width: 900px;
+        padding: var(--spacing);
+        width: 50%;
     }
 
     input {
