@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scoped CSS Variables and JS</title>
+
+	<!-- MAIN CSS -->
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+	<h2>Update CSS Variables with <span class='hl'>JS</span></h2>
+
+	<div class="controls">
+		<label for="spacing">Spacing:</label>
+		<input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+		<label for="blur">Blur:</label>
+		<input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+
+		<label for="base">Base Color</label>
+		<input id="base" type="color" name="base" value="#ffc600">
+	</div><!-- //controls END -->
+
+	<img src="https://cdn.pixabay.com/photo/2017/12/12/11/37/bastei-bridge-3014467_1280.jpg">
+
+	<!-- MAIN JAVASCRIPT -->
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
