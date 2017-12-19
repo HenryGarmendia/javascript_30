@@ -17,10 +17,24 @@ function find_matches(words_to_match, cities) {
 
 // display function
 function display_matches() {
-    console.log(this.value);
+    const match_array = find_matches(this.value, cities);
+    const html = match_array.map(place => {
+        const regex = new RegExp(this.value, 'gi');
+        const city_name =  place.city.reaplace(regex, `<span class="hl">${this.value}</span>`);
+        const state_name =  place.state.reaplace(regex, `<span class="hl">${this.value}</span>`);
+        return `
+            <li>
+        const city_name =  place.city.reaplace(regex, `<span class="hl">${this.value}</span>`);
+                <span class="name">${city_name}, ${state_name}</span>
+                <span class="population">${place.population}</span>
+            </li>
+        `;
+    }).join('');
+    suggestions.innerHTML = html; 
 }
 
 const search_input = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
 
 search_input.addEventListener('change', display_matches);
+search_input.addEventListener('keyup', display_matches);
