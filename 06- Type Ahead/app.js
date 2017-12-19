@@ -20,11 +20,10 @@ function display_matches() {
     const match_array = find_matches(this.value, cities);
     const html = match_array.map(place => {
         const regex = new RegExp(this.value, 'gi');
-        const city_name =  place.city.reaplace(regex, `<span class="hl">${this.value}</span>`);
-        const state_name =  place.state.reaplace(regex, `<span class="hl">${this.value}</span>`);
+        const city_name =  place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+        const state_name =  place.state.replace(regex, `<span class="hl">${this.value}</span>`);
         return `
             <li>
-        const city_name =  place.city.reaplace(regex, `<span class="hl">${this.value}</span>`);
                 <span class="name">${city_name}, ${state_name}</span>
                 <span class="population">${place.population}</span>
             </li>
