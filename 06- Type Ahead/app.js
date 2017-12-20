@@ -15,6 +15,10 @@ function find_matches(words_to_match, cities) {
     });
 };
 
+function number_with_commas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
 // display function
 function display_matches() {
     const match_array = find_matches(this.value, cities);
@@ -25,12 +29,12 @@ function display_matches() {
         return `
             <li>
                 <span class="name">${city_name}, ${state_name}</span>
-                <span class="population">${place.population}</span>
+                <span class="population">${number_with_commas(place.population)}</span>
             </li>
         `;
     }).join('');
     suggestions.innerHTML = html; 
-}
+};
 
 const search_input = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
