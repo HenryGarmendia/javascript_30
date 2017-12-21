@@ -16,8 +16,28 @@ const comments = [
 ];
 
 // Some and Every Checks
-// Array.prototype.some() // is at least one person 19 or older?
-// Array.prototype.every() // is everyone 19 or older?
+/* 
+    The some() method tests whether at least one element in the array passes the test implemented by the provided function.
+*/ // Array.prototype.some() // is at least one person 19 or older?
+
+const is_adult = people.some(function(person) {
+    const current_year = (new Date()).getFullYear();
+    if (current_year - person.year >= 19) {
+        return true;
+    }
+});
+
+// const is_adult = people.some(person => {
+// 	const current_year = (new Date()).getFullYear();
+// 	return current_year - person.year >= 19;
+// });
+
+// const is_adult = people.some(person => (new Date()).getFullYear() - person.year >= 19);
+console.log({is_adult});
+
+/*
+    The every() method tests whether all elements in the array pass the test implemented by the provided function.
+*/ // Array.prototype.every() // is everyone 19 or older?
 
 // Array.prototype.find()
 // Find is like filter, but instead returns just the one you are looking for
