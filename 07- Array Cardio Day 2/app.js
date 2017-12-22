@@ -39,6 +39,9 @@ console.log({is_adult});
     The every() method tests whether all elements in the array pass the test implemented by the provided function.
 */ // Array.prototype.every() // is everyone 19 or older?
 
+const all_adult = people.every(person => (new Date()).getFullYear() - person.year >= 19);
+console.log({all_adult});
+
 // Array.prototype.find()
 // Find is like filter, but instead returns just the one you are looking for
 // find the comment with the ID of 823423
