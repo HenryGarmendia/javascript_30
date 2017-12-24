@@ -58,6 +58,25 @@ console.log({all_adult});
 const comment = comments.find(comment => (comment.id === 823423));
 console.log(comment);
 
-// Array.prototype.findIndex()
+/* 
+	The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. Otherwise -1 is returned.
+*/ // Array.prototype.findIndex()
 // Find the comment with this ID
 // delete the comment with the ID of 823423
+
+const index = comments.findIndex(function(comment) {
+	if (comment.id === 823423) {
+		return true;
+	}
+});
+
+console.log(index);
+
+// comments.splice(index, 1);
+
+// find out about the spread operator
+const new_comments = [
+	...comments.slice(0, index),
+	...comments.slice(index + 1)
+]
+console.table(new_comments);
